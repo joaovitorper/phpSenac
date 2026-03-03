@@ -1,0 +1,6 @@
+<?php
+echo "Digite seu nome: " . PHP_EOL;
+$nome = fgets(STDIN);
+
+echo "Bem-vindo(a), " . $nome;
+?>
