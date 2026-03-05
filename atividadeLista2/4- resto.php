@@ -8,4 +8,4 @@ echo "digite seu segundo numero:".PHP_EOL;
 $numero2 = fgets(STDIN);
 
 $resto = $numero1 % $numero2;
-echo" o resto do numero $numero1% $numero2 é: $resto".PHP_EOL;
+echo" o resto do numero $numero1% $numero2 é: $resto";
