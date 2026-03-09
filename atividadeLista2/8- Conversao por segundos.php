@@ -7,6 +7,7 @@ $segundos = fgets(STDIN);
 $horas = intdiv($segundos, 3600);
 $resto = $segundos % 3600;
 
+
 $minutos = intdiv($resto, 60);
 $segundosFinal = $resto % 60;
 
