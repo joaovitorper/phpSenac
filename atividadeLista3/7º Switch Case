@@ -1,0 +1,16 @@
+<?php
+$opcao = 2;
+switch ($opcao) {
+    case 1:
+        echo "Cadastrar selecionado";
+        break;
+    case 2:
+        echo "Listar selecionado";
+        break;
+    case 3:
+        echo "Excluir selecionado";
+        break;
+    default:
+        echo "Opção inválida";
+}
+?>
