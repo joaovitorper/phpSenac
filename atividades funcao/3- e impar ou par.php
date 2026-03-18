@@ -7,6 +7,6 @@ function ehPar($numero) {
     }
 }
 
-ehPar(70);
-?>
 
+ehPar(123);
+?>
