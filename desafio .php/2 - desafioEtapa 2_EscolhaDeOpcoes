@@ -1,0 +1,56 @@
+<?php
+$nomeDoCliente = "João Vítor Pereira Paulo";
+$saldo =100;
+
+echo "Receba as Boas Vindas ao banco Senac" . PHP_EOL;
+
+do {
+    echo "******************" . PHP_EOL;
+    echo "1- Consultar Saldo" . PHP_EOL;
+    echo "2- Sacar Valor" . PHP_EOL;
+    echo "3- Depositar Valor" . PHP_EOL;
+    echo "4- Sair" . PHP_EOL;
+    echo "******************" . PHP_EOL;
+    
+    $opcao = trim(fgets(STDIN));
+    
+  switch ($opcao) {
+    case '1':
+ echo "Você escolheu a opção 1 - Consultar saldo";
+ echo "O Saldo atual é: $saldo";
+        break;
+
+    case '2':
+     echo "Você escolheu a opção 2 - Sacar Valor";
+     
+     echo "Qual valor voce vai sacar";
+     $saque = fgets(STDIN);
+     if($saldo <$saque){
+        echo"Você nao tem limite Suficiente pra Sacar";
+    }else{
+        $saldo = $saldo-$saque;
+     }
+break;
+
+    case '3':
+    echo "Você escolheu a opção 3 - Depositar Valor\n";
+
+    echo "Qual valor você deseja depositar? ";
+    $depositar = (float) fgets(STDIN);
+
+    $saldo += $depositar;
+
+    echo "Depósito realizado! Novo saldo: $saldo\n";
+    break;
+    
+    case '4':
+       echo "Você escolheu a opção   4 - finalizar Programa";
+        break;
+
+    default:
+       
+        break;
+}
+  }
+ while ($opcao != 4);
+
