@@ -28,18 +28,53 @@ class Aluno {
     }
 }
 
-$aluno1 = new Aluno();
+$estudantes = [];
 
-echo "Digite o nome do aluno: ";
-$aluno1->nome = trim(fgets(STDIN));
+while(true){
+    echo"\n";
+    echo "1 ADICIONAR estudantes".PHP_EOL;
+    echo "2 LISTAR estudantes".PHP_EOL;
+    echo "3 Programa encerrado".PHP_EOL;
 
-echo "Digite a primeira nota: ";
-$aluno1->nota1 = (float) trim(fgets(STDIN));
+       echo "\n";
+       echo "Digite uma opção: ";
+       $opcao = trim(fgets(STDIN));
+       echo "Você digitou: $opcao\n";
+    switch ($opcao) {
+        case '1':
+            $aluno1 = new aluno();
+            echo "Digite o nome do Aluno:  ".PHP_EOL;
+            $aluno1 -> nome =  trim(fgets(STDIN));
+            
+            echo "Digite a Primeira NOTA:  ".PHP_EOL;
+            $aluno1 -> nota1 =  trim(fgets(STDIN));
+            
+            echo "Digite a Segunda NOTA:  " .PHP_EOL;
+            $aluno1 -> nota2 =  trim(fgets(STDIN)); 
+            
+            $estudantes[] =$aluno1;
+              echo "Aluno Cadastrado com sucesso";          
+         
 
-echo "Digite a segunda nota: ";
-$aluno1->nota2 = (float) trim(fgets(STDIN));
+            break;
+            case 2:
+            if (count($estudantes) == 0) {
+                echo "Nenhum aluno cadastrado.\n";
+            } else {
+                echo "\n=== LISTA DE ALUNOS ===\n";
+ 
+                foreach ($estudantes as $a) {
+                    $a->exibirDados();
+                }
+            }
+              break;
 
-echo "\n===== RESULTADO =====\n";
-$aluno1->exibirDados();
+               
+                
+        default:
+      case 3:
+    echo "Encerrando o sistema...\n";
+    exit;
 
-
+       } 
+    }
